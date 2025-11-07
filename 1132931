@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1132931</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #cce5ff, #e6f0ff);
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #003366;
+            margin-top: 40px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        canvas {
+            margin-top: 30px;
+            border: 2px solid #003366;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>HW05-1132931</h1>
+    <p>學號：1132931</p>
+    <p>姓名：彭昱儒</p>
+
+    <canvas id="circleCanvas" width="400" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById("circleCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // 畫外圈（環）
+        ctx.beginPath();
+        ctx.arc(200, 150, 100, 0, 2 * Math.PI);
+        ctx.strokeStyle = "#003366";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        // 畫內圈
+        ctx.beginPath();
+        ctx.arc(200, 150, 50, 0, 2 * Math.PI);
+        ctx.strokeStyle = "#66a3ff";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        // 畫兩圓之間的連線
+        ctx.beginPath();
+        ctx.moveTo(200 + 50, 150);
+        ctx.lineTo(200 + 100, 150);
+        ctx.strokeStyle = "#ff6600";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        // 標註說明文字
+        ctx.font = "16px Microsoft JhengHei";
+        ctx.fillStyle = "#333";
+        ctx.fillText("圓與環的連結示意", 130, 280);
+    </script>
+</body>
+</html>
